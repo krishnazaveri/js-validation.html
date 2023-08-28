@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>validation</title>
+</head>
+<body>
+
+    Name : <input type="text" id="inp">
+    
+    <span id="nmerr"></span>
+    <br><br><br>
+
+
+    Mobile : <input type="text"  id="mob">
+    <!-- <span id="mberr"></span> -->
+
+    <br><br><br>
+
+    <input type="submit" onclick="validation()">
+
+
+    <script>
+
+        nm=document.getElementById('inp');
+        mb=document.getElementById('mob');
+
+        sp=document.getElementById('nmerr');
+        //sp1=document.getElementById('mberr');
+
+        nmex=/^ [a-zA-Z]{2,8} $/;
+
+        //mbex=/^ [0-9] {10} $/;
+
+        function validation ()
+        {
+            if(nm.value=="" )
+            {
+                sp.innerHTML = "Required...!"
+               // sp1.innerHTML = "mobile number required"
+            }
+
+            else if (!nm.value.match(nmex))
+            {   
+                sp.innerHTML = "min 2 and max 8 letters only...!"
+
+            }
+
+            else {
+                sp.innerHTML="";
+            }
+        }
+
+    </script>
+    
+</body>
+</html>
